@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=3 uid="uid://buitbf3ydcf7k"]
+
+[ext_resource type="FontFile" uid="uid://dk82xr66qx5g6" path="res://assets/fonts/ArchitectsDaughter.ttf" id="1_msslq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qjoq"]
+bg_color = Color(0.0862745, 0.121569, 0.239216, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lyp0j"]
+bg_color = Color(0.25684, 0.264179, 0.305757, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0de6"]
+bg_color = Color(0.0862745, 0.121569, 0.239216, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf7xr"]
+bg_color = Color(0.215686, 0.239216, 0.290196, 1)
+corner_radius_top_right = 25
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScreenMargins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenMargins"]
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenMargins/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_3qjoq")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Buttons" type="VBoxContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Items" type="Button" parent="ScreenMargins/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lyp0j")
+text = "Items"
+
+[node name="Journal" type="Button" parent="ScreenMargins/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lyp0j")
+text = "Journal"
+
+[node name="History" type="Button" parent="ScreenMargins/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lyp0j")
+text = "History"
+
+[node name="DialogueLine" type="VBoxContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="NamePanel" type="PanelContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer/DialogueLine"]
+custom_minimum_size = Vector2(125, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0de6")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer/DialogueLine/NamePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 5
+
+[node name="NameText" type="RichTextLabel" parent="ScreenMargins/VBoxContainer/HBoxContainer/DialogueLine/NamePanel/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_msslq")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Jeremy"
+scroll_active = false
+autowrap_mode = 2
+
+[node name="LinePanel" type="PanelContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer/DialogueLine"]
+custom_minimum_size = Vector2(750, 175)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_mf7xr")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer/DialogueLine/LinePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 5
+
+[node name="LineText" type="RichTextLabel" parent="ScreenMargins/VBoxContainer/HBoxContainer/DialogueLine/LinePanel/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_msslq")
+theme_override_font_sizes/normal_font_size = 18
+text = "This is the Den-Den text. Here's what it looks like with a bunch of text in it. My Den-Den says, \"The font is too small!\". 
+
+Can you put line breaks in here? Yup. Ohaiyou."
+scroll_active = false
+autowrap_mode = 2
