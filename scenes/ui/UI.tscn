@@ -88,8 +88,19 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_lyp0j")
 text = "History"
 
+[node name="History2" type="Button" parent="ScreenMargins/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lyp0j")
+text = "Load"
+
+[node name="History3" type="Button" parent="ScreenMargins/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lyp0j")
+text = "Save"
+
 [node name="DialogueLine" type="VBoxContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 2
 
 [node name="NamePanel" type="PanelContainer" parent="ScreenMargins/VBoxContainer/HBoxContainer/DialogueLine"]
