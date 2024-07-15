@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0mrhfp0lxvfm"]
+[gd_scene load_steps=6 format=3 uid="uid://d0mrhfp0lxvfm"]
 
 [ext_resource type="Texture2D" uid="uid://blw27uuq88elw" path="res://assets/backgrounds/[House] Living Room 1.png" id="1_ihd1h"]
 [ext_resource type="PackedScene" uid="uid://buitbf3ydcf7k" path="res://scenes/ui/UI.tscn" id="2_h2mhr"]
 [ext_resource type="PackedScene" uid="uid://b12d6rstou6x7" path="res://scenes/ui/Inventory.tscn" id="3_08hmj"]
 [ext_resource type="Script" path="res://scripts/GameInput.cs" id="3_krer2"]
+[ext_resource type="PackedScene" uid="uid://bil8khucufqn" path="res://scenes/ui/Journal.tscn" id="4_3um67"]
 
 [node name="MainScene" type="Node"]
 
@@ -24,11 +25,19 @@ expand_mode = 1
 
 [node name="UI" parent="." instance=ExtResource("2_h2mhr")]
 
+[node name="Journal" parent="." instance=ExtResource("4_3um67")]
+visible = false
+offset_left = 142.0
+offset_top = 54.0
+offset_right = 142.0
+offset_bottom = 54.0
+
 [node name="Inventory" parent="." instance=ExtResource("3_08hmj")]
 visible = false
 
-[node name="GameInput" type="Node" parent="." node_paths=PackedStringArray("Environment", "UI", "Inventory")]
+[node name="GameInput" type="Node" parent="." node_paths=PackedStringArray("Environment", "UI", "Inventory", "Journal")]
 script = ExtResource("3_krer2")
 Environment = NodePath("../Environment")
 UI = NodePath("../UI")
 Inventory = NodePath("../Inventory")
+Journal = NodePath("../Journal")
